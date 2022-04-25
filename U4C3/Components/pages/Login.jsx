@@ -9,9 +9,19 @@ import { Form } from "./EditBookData";
 
 // add input styling
 export const Input = styled.input`
- 
+ height:40px;
+ background-color:rgb(155,186,189);
+ width:400px;
+ display:flex;
+ flex-direction:column;
+ gap:20px;
+ border:none;
+ align-item:center;
+ margin:auto;
+ margin-top:20px;
+ text-align:center;
+ font-size:20px;
 `;
-
 
 export const Login = () => {
   const [email, setEmail] = useState("");

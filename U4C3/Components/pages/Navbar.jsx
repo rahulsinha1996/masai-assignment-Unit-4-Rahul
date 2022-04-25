@@ -1,9 +1,35 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { AuthContext } from "../context/AuthContext";
 
+const NavbarStyle=styled.div`
 
+  margin:0;
+  padding:0;
+  height:50px;
+  background-color:rgb(253,155,149);
+  color:blue;
+  
+  font-size:20px;
+  align-item:center;
+  
+
+  .active{
+    color:red;
+    text-decoration:none;
+   
+  }
+  nav{
+    display:flex;
+    flex-direction:row;
+    gap:30px;
+    justify-content:center;
+    text-align:center;
+    text-decoration:none;
+    font-weight:bold;
+  }
+`
 
 export const Navbar = () => {
   const { token } = useContext(AuthContext);
@@ -11,12 +37,19 @@ export const Navbar = () => {
   console.log(token)
  
   return (
-    <div>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/books">books</Link>
-        <Link to="/login">Login</Link>
-    </div>
+
+    <>
+    <NavbarStyle>
+    <nav>
+      
+        <NavLink activeclassname="active" to="/">Home</NavLink>
+        <NavLink activeclassname="active" to="/about">About</NavLink>
+        <NavLink activeclassname="active" to="/books">Books</NavLink>
+        <NavLink activeclassname="active" to="/login">Login</NavLink>     
+    </nav>
+    </NavbarStyle>
+    </>
+    
      
       
   );
